@@ -1,0 +1,33 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Таск-менеджер</h1>
+  
+  <form id="task-form">
+    <input type="text" id="task-input" placeholder="Введите задачу..." required />
+    <button type="submit">Добавить</button>
+  </form>
+
+  <div class="controls">
+    <input type="text" id="search-input" placeholder="Поиск по задачам...">
+    <div class="filters">
+      <button data-filter="all" class="active">Все</button>
+      <button data-filter="active">Активные</button>
+      <button data-filter="done">Выполненные</button>
+    </div>
+    <div class="sort">
+      <button id="sort-button" data-order="desc">Сортировка: ↓</button>
+    </div>
+  </div>
+
+  <ul id="task-list"></ul>
+
+  <script src="taskScript.js"></script>
+</body>
+</html>
