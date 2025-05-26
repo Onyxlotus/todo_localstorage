@@ -34,7 +34,7 @@ function renderTasks() {
 
   if (filteredTasks.length === 0) {
     const emptyMsg = document.createElement('li');
-    emptyMsg.textContent = 'Задач нет';
+    emptyMsg.textContent = 'Задач нет 😉';
     emptyMsg.className = 'empty-message';
     list.appendChild(emptyMsg);
     return;

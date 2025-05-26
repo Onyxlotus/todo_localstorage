@@ -16,9 +16,10 @@ h1 {
   font-size: 72px;
   color: #fff;
   text-align: center;
-  animation: neonFlicker 3s infinite;
+  text-shadow: #a04dff 5px 0px 10px;
+  /* animation: neonFlicker 3s infinite; */
 }
-
+/* 
 @keyframes neonFlicker {
   0%, 100% {
     opacity: 1;
@@ -79,12 +80,19 @@ h1 {
       0 0 5px #a04dff,
       0 0 15px #a04dff;
   }
-}
+} */
 
 .empty-message{
-  color: #000;
-  font-size: 18px;
+  font-family: "Pacifico", sans-serif;
+  color: #fff;
+  background-color: #ffffff00;
+  text-shadow: #a04dff 1px 0px 5px;
+  font-size: 24px;
   margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -174,7 +182,7 @@ ul {
   padding: 0;
 }
 li {
-  background: white;
+  background: #424242;
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
@@ -189,7 +197,7 @@ li {
   margin-right: 10px;
   font-weight: 400;
   font-size: 16px;
-  color: #000;
+  color: #fff;
 }
 li.completed .task-text {
   text-decoration: line-through;
