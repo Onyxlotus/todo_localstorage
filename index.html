@@ -7,15 +7,27 @@
 </head>
 <body>
 
-  <h1>Таск-менеджер</h1>
+  <h1>Таск -менеджер</h1>
   
   <form id="task-form">
-    <input type="text" id="task-input" placeholder="Введите задачу..." required />
+    <div style="display: flex; align-items: center;" class="search-wrapper">
+      <input type="text" id="task-input" placeholder="Введите задачу..." oninput="toggleClearButton()" required />
+      <svg id="clear-button" class="clear-button" viewBox="0 0 24 24" width="16" height="16" onclick="clearTaskInput()" style="display: none;">
+        <line x1="6" y1="6" x2="18" y2="18" stroke="#cc88ff" stroke-width="2" stroke-linecap="round" />
+        <line x1="18" y1="6" x2="6" y2="18" stroke="#cc88ff" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
     <button type="submit">Добавить</button>
   </form>
 
   <div class="controls">
-    <input type="text" id="search-input" placeholder="Поиск по задачам...">
+    <div class="search-wrapper">
+      <input type="text" id="search-input" placeholder="Поиск по задачам..." oninput="toggleClearButton()"/>
+      <svg id="clear-button2" class="clear-button" viewBox="0 0 24 24" width="16" height="16" onclick="clearSearchInput()" style="display: none;">
+        <line x1="6" y1="6" x2="18" y2="18" stroke="#cc88ff" stroke-width="2" stroke-linecap="round" />
+        <line x1="18" y1="6" x2="6" y2="18" stroke="#cc88ff" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
     <div class="filters">
       <button data-filter="all" class="active">Все</button>
       <button data-filter="active">Активные</button>

@@ -90,8 +90,11 @@ function renderTasks() {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const text = input.value.trim();
+  let text = input.value.trim().toLowerCase();
   if (text) {
+    // Только первая буква первой строки — заглавная
+    text = text[0].toUpperCase() + text.slice(1);
+
     tasks.push({
       text,
       done: false,
@@ -101,6 +104,7 @@ form.addEventListener('submit', (e) => {
     renderTasks();
     input.value = '';
     input.focus();
+    toggleClearButton();
   }
 });
 
@@ -125,5 +129,31 @@ filterBtns.forEach(btn => {
     renderTasks();
   });
 });
+
+function toggleClearButton() {
+  const taskInput = document.getElementById('task-input');
+  const searchInput = document.getElementById('search-input');
+  const clearBtnTask = document.getElementById('clear-button');
+  const clearBtnSearch = document.getElementById('clear-button2');
+
+  // Показать кнопку очистки для taskInput, если есть текст
+  clearBtnTask.style.display = taskInput.value.length > 0 ? 'inline' : 'none';
+
+  // Показать кнопку очистки для searchInput, если есть текст
+  clearBtnSearch.style.display = searchInput.value.length > 0 ? 'inline' : 'none';
+}
+
+function clearTaskInput() {
+  const taskInput = document.getElementById('task-input');
+  taskInput.value = '';
+  toggleClearButton();
+}
+
+function clearSearchInput() {
+  const searchInput = document.getElementById('search-input');
+  searchInput.value = '';
+  toggleClearButton();
+  renderTasks(); // если нужно перерисовать задачи при очистке поиска
+}
 
 renderTasks();

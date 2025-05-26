@@ -1,34 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+  background: #212529;
+  color: #fff;
   padding: 20px;
   max-width: 600px;
   margin: auto;
 }
+
 h1 {
+  font-family: "Pacifico", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  color: #fff;
   text-align: center;
+  animation: neonFlicker 3s infinite;
 }
-#task-form {
-  display: flex;
-  margin-bottom: 10px;
+
+@keyframes neonFlicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #a04dff,
+      0 0 10px #a04dff,
+      0 0 20px #a04dff,
+      0 0 40px #a04dff;
+  }
+  5% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+  10% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #a04dff,
+      0 0 15px #a04dff,
+      0 0 25px #a04dff;
+  }
+  15% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+  20%, 25% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #a04dff,
+      0 0 10px #a04dff;
+  }
+  30% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+  40% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #a04dff,
+      0 0 20px #a04dff;
+  }
+  55% {
+    opacity: 0.7;
+    text-shadow: none;
+  }
+  70% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #a04dff,
+      0 0 30px #a04dff;
+  }
+  85% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+  95% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #a04dff,
+      0 0 15px #a04dff;
+  }
 }
-#task-input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
+
+.empty-message{
+  color: #000;
+  font-size: 18px;
+  margin-top: 20px;
 }
+
 button {
   padding: 10px;
-  background: #007bff;
+  background: #a04dff;
+  border-radius: 4px;
+  margin-left: 2px;
   color: white;
   border: none;
   cursor: pointer;
 }
 button:hover {
-  background: #0056b3;
+  background: #973bff;
 }
 .controls {
   display: flex;
+  color: #fff;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
@@ -36,19 +109,66 @@ button:hover {
 }
 .filters button,
 .sort button {
-  background: #ccc;
-  color: #333;
+  background: #424242;
+  color: #fff;
 }
 .filters button.active,
 .sort button.active {
-  background: #007bff;
+  background: #a04dff;
   color: white;
 }
+
+#task-form{
+  display: flex;
+  flex: 1;
+}
+
+.search-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background-color: #212529;
+  padding: 10px;
+}
+
+#task-input {
+  flex: 1;
+  background-color: #212529;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #888;
+  outline: none;
+  font-size: 18px;
+}
+
+#task-input::placeholder {
+  color: #ccc;
+}
+
 #search-input {
   flex: 1;
-  padding: 10px;
-  font-size: 14px;
+  background-color: #212529;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #888;
+  outline: none;
+  font-size: 18px;
 }
+
+#search-input::placeholder {
+  color: #ccc;
+}
+
+.clear-button {
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.clear-button:hover {
+  transform: scale(1.2);
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -64,9 +184,16 @@ li {
 }
 .task-text {
   flex: 1;
+  white-space: normal;
+  word-break: break-word;
   margin-right: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
 }
 li.completed .task-text {
+  text-decoration: line-through;
+  font-weight: 600;
   color: gray;
 }
 .btn-group button {
