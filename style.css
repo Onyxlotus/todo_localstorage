@@ -16,71 +16,8 @@ h1 {
   font-size: 72px;
   color: #fff;
   text-align: center;
-  text-shadow: #a04dff 5px 0px 10px;
-  /* animation: neonFlicker 3s infinite; */
+  text-shadow: #a04dff 3px 0px 5px;
 }
-/* 
-@keyframes neonFlicker {
-  0%, 100% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px #a04dff,
-      0 0 10px #a04dff,
-      0 0 20px #a04dff,
-      0 0 40px #a04dff;
-  }
-  5% {
-    opacity: 0.8;
-    text-shadow: none;
-  }
-  10% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px #a04dff,
-      0 0 15px #a04dff,
-      0 0 25px #a04dff;
-  }
-  15% {
-    opacity: 0.5;
-    text-shadow: none;
-  }
-  20%, 25% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px #a04dff,
-      0 0 10px #a04dff;
-  }
-  30% {
-    opacity: 0.3;
-    text-shadow: none;
-  }
-  40% {
-    opacity: 1;
-    text-shadow:
-      0 0 10px #a04dff,
-      0 0 20px #a04dff;
-  }
-  55% {
-    opacity: 0.7;
-    text-shadow: none;
-  }
-  70% {
-    opacity: 1;
-    text-shadow:
-      0 0 10px #a04dff,
-      0 0 30px #a04dff;
-  }
-  85% {
-    opacity: 0.6;
-    text-shadow: none;
-  }
-  95% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px #a04dff,
-      0 0 15px #a04dff;
-  }
-} */
 
 .empty-message{
   font-family: "Pacifico", sans-serif;
@@ -165,6 +102,11 @@ button:hover {
 
 #search-input::placeholder {
   color: #ccc;
+}
+
+#task-input:focus,
+#search-input:focus {
+  border-bottom: 1px solid #424242;
 }
 
 .clear-button {
